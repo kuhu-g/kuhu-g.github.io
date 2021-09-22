@@ -1,0 +1,490 @@
+body {
+  font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box;
+  background-color: #1A1A1D;
+}
+
+main{
+  margin-top: 12vh;
+}
+
+/*Styling the nav bar*/
+.nav{
+  list-style-type: none;
+  overflow: hidden;
+  display: inline;
+  padding: 0 3em;
+  /*float: right;*/
+
+}
+
+nav{
+  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  background-color: #1A1A1D;
+  align-items: center;
+  height: 8vh;
+}
+
+li{
+  display: inline;
+  /*float: right;*/
+  padding: 1em;
+  color: white;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+}
+
+li a{
+  color: white;
+  text-decoration: none;
+}
+
+li a:hover{
+  color: #99FFFF;
+
+}
+
+.active{
+  color: #FF9999;
+}
+
+#bookIcon{
+  max-height: 7vh;
+  vertical-align: middle;
+}
+
+#bookIcon:hover{
+  background-color: #99FFFF;
+}
+
+.burger{
+  display: none;
+}
+
+.burger div{
+  width: 25px; 
+  height: 2px;
+  margin: 3px; 
+  background-color: white;
+  align-self: middle;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 800px){
+  .nav{
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #1A1A1D;
+    width: 40%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    overflow: hidden;
+    /*transition: transform 0.5s ease-in;*/
+  }
+  .nav li{
+    opacity: 0;
+  }
+  .burger{
+    display: block;
+    cursor: pointer;
+  }
+
+  nav{
+    justify-content: space-around;
+  }
+}
+
+.nav-active{
+  transform: translateX(0%);
+}
+
+@keyframes navLinksFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-2px,5px);
+}
+
+.toggle .line2{
+  opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-2px,-5px);
+
+}
+/*Styling trigger warning*/
+#myModal{
+  display: flex;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 100%;
+  width: 100%;   
+  background-color: rgba(0,0,0,0.93);
+  backdrop-filter: blur(8px); 
+
+}
+
+.modalContent{
+  background-color: #FF9999;
+  margin: auto;
+  padding: 20px;
+  border: 5px solid #CC99FF;
+  width: 80%;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.close{
+  color: #000;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #99FFFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*Styling image modal*/
+#worldMap{
+  cursor: pointer;
+}
+
+#worldMap:hover{
+  opacity: 0.7;
+}
+
+#imgModal{
+  display: none;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 100%;
+  width: 100%;   
+  background-color: rgba(0,0,0,0.93);
+}
+
+.ModalContent{
+  margin: auto;
+  display: block;
+  text-align: center;
+  left: 0;
+  top: 0;
+  padding: 2em;
+  max-width: 75%;
+  max-height: 75%;
+  padding-top: 5em;
+
+}
+
+#caption{
+  margin: auto;
+  display: block;
+  width: 80%;
+  padding: 1em;
+  text-align: center;
+  font-size: 1.2em;
+  color: #99FFFF;
+}
+
+#imgCloseBtn{  
+  color: #FF9999;
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+
+#imgCloseBtn:hover,
+#imgCloseBtn:focus{
+  color: #99FFFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*Styling main heading text*/
+#mainText{
+  font-size: 4em;
+  color: #99FFFF;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+#actionHeading{
+  font-size: 4.5em;
+  color: #99FFFF;
+  text-align: left;
+  letter-spacing: 5px;
+  padding-top: 20px;
+}
+
+h1{
+color: #99FFFF;
+font-size: 2.5em;
+letter-spacing: 3px;
+}
+
+h2{
+  font-size: 2em;
+  color: #FF9999;
+  text-align: left;
+  letter-spacing: 3px;
+  margin-left: 1em;
+}
+
+#action{
+  margin-left: 2em;
+}
+
+.actionContent{
+  margin-left: 2em;
+}
+
+/*Styling content (p tag)*/
+.content{
+  max-width: 60%;
+  padding: 1em 2em;
+  text-align: left;
+  color: #FF9999;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+}
+
+.contentLink{
+  text-decoration: none;
+  color:#CC99FF;
+  letter-spacing: 2px;
+}
+
+.contentLink:hover{
+  color: #99FFFF;
+}
+
+/*styling home page image*/
+.imageDiv{
+  position: absolute;
+  right: 2em;
+  text-align: right;
+  z-index: 1;
+  max-width: 30%;
+}
+
+.image{
+  max-width: 90%;
+}
+
+.imageSource{
+  font-size: 0.9em;
+  color: #FF9999;
+}
+
+.imageSourceLink{
+  color:#CC99FF;
+  font-size: 0.9em;
+}
+
+.imageSourceLink:hover{
+  color: #99FFFF;
+}
+
+.aboutImg{
+  font-size: 1.1em;
+  color: #FF9999;
+}
+
+/*Styling flex box for text*/
+.text{
+  flex-wrap: wrap;
+}
+
+/*Styling fact button, fact div and fact text*/
+#factGen{
+  text-align: center;
+  margin: auto;
+}
+
+#factBtn{
+  border: 2px solid black;
+  font-family: 'Roboto Mono', monospace;
+  padding: 1em;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: #CC99FF;
+  color: #000;
+}
+
+#factBtn:hover{
+  background-color: #99FFFF;
+}
+
+#fact{
+  text-align: center;
+  color: #FF9999;
+  font-size: 1.5em;
+  letter-spacing: 3px;
+}
+
+#factDiv{
+  width: 60%;
+  padding: 1em;
+  margin: auto;
+  height: 10em;
+
+}
+
+/*styling checklist for find help page*/
+.checkList{
+  list-style-type: none;
+  overflow: hidden;
+  display: block;
+  padding: 0 3em;
+}
+
+.check{
+  display: list-item;
+  padding: 20px;
+  line-height: 1.4em;
+}
+
+
+/*styling affirmations*/
+#affirmation{
+  line-height: 1.5em;
+  font-size: 1.23em;
+  letter-spacing: 3px;
+  margin: auto;
+}
+
+.scriptItem{
+  color: #99FFFF;
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+
+.scriptQ{
+  padding: 2em;
+  width: 15em;
+  border: 2px solid black;
+  margin: auto;
+}
+
+#scriptBtn{
+  padding: 1em;
+  background-color: #CC99FF;
+  text-align: center;
+  font-size: 1.2em;
+  color:#000;
+  font-family:'Roboto Mono', monospace;
+  border: 2px solid black;
+  font-weight: bold;
+
+}
+
+#scriptBtn:hover{
+  background-color: #99FFFF;
+}
+
+#helpTitle{
+  padding: 1em;
+}
+
+#aboutTitle{
+  padding-top: 38.4px;
+  padding-left: 38.4px;
+  font-size: 4em;
+}
+
+/*styling key features list */
+.feature{
+  text-align: left;
+  display: list-item;
+  list-style-type: 1;
+}
+
+.keyFeatures{
+  color: #99FFFF;
+  text-align: left;
+    margin-left: 2em;
+}
+
+#about{
+  line-height: 1.3em;
+}
+
+.helpNo{
+  list-style-type: disc;
+  display: list-item;
+}
+
+/*------------------------------*/
+/*------------------------------*/
+#carouselContainer{
+  background-color: #CC99FF;
+  width: 450px;
+  height: 300px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  /*position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%)*/
+}
+
+.carouselSlide{
+  /*display: flex;
+  height: 6em;
+  overflow: hidden;
+  width: 100%;
+  background-color: #CC99FF;
+  margin: auto;*/
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  margin: auto;
+  background-color: #99FFFF;
+  box-sizing: border-box;
+
+
+}
+
+.card{
+  width: 450px;
+  height: 300px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
